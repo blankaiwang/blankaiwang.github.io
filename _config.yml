@@ -27,7 +27,7 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 
 # SNS settings
-RSS: false
+RSS: true
 weibo_username: blankaiwang
 twitter_username: blankaiwang
 github_username: blankaiwang
