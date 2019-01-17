@@ -4,7 +4,7 @@
 title: Blankaiwang's Blog
 SEOTitle: Blankaiwang
 header-img: img/background.png
-email: blankaiwang@hotmail.com
+email: Blankaiwang@hotmail.com
 description: "Share something interesting and log something useful. Just enjoy it."
 
 
@@ -27,10 +27,10 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 
 # SNS settings
-RSS: true
-weibo_username: blankaiwang
-twitter_username: blankaiwang
-github_username: blankaiwang
+RSS: false
+weibo_username:     blankaiwang
+twitter_username:    blankaiwang
+github_username:    blankaiwang
 
 
 # Build settings
