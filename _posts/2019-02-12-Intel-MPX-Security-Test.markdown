@@ -71,7 +71,7 @@ Fedora 29下，添加MPX编译选项后，make报错：
 
 此时研判是缺失32位的MPX连接库文件，访问
 
-https://fedora.pkgs.org/29/fedora-x86-64/libmpx-8.2.1-2.fc29.i686.rpm.html
+<https://fedora.pkgs.org/29/fedora-x86-64/libmpx-8.2.1-2.fc29.i686.rpm.html>
 
 并安装rpm包，解决问题。
 
