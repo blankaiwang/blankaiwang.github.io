@@ -44,31 +44,36 @@ LDFLAGS+=-lmpx -lmpxwrappers
 ## 问题修正
 
 在64位OS中，由于RIPE在MAKEFILE中加入了 `-m32`选项强制进行32位编译，直接make会报错.
-    Fedora 29:
+
+Fedora 29:
 
 ```bash
 gnu/stubs-32.h:No such file or directory
 ```
 
-	添加支持 `yum install glibc-devel.i686`
+添加支持 `yum install glibc-devel.i686`
 	
-	Ubuntu 16.04:
+Ubuntu 16.04:
 
 ```bash
 fatal error: sys/cdefs.h: No such file or directory
 ```
 
-	添加支持 `sudo apt-get install glibc6-dev-i386`
+添加支持 `sudo apt-get install glibc6-dev-i386`
 
 Fedora 29下，添加MPX编译选项后，make报错：
 
    ![error2.1](https://github.com/blankaiwang/blankaiwang.github.io/raw/master/_posts/2019-02-12-Intel-MPX-Security-Test.assets/Figure%201.jpg)
 
-   直接将`/usr/lib64`路径下对应的两个.so文件拷贝到`/usr/lib`下并不能解决问题：
+直接将`/usr/lib64`路径下对应的两个.so文件拷贝到`/usr/lib`下并不能解决问题：
 
    ![error2.2](https://github.com/blankaiwang/blankaiwang.github.io/raw/master/_posts/2019-02-12-Intel-MPX-Security-Test.assets/Figure%202.jpg)
 
-   此时研判是缺失32位的MPX连接库文件，访问https://fedora.pkgs.org/29/fedora-x86-64/libmpx-8.2.1-2.fc29.i686.rpm.html并安装rpm包，解决问题。
+此时研判是缺失32位的MPX连接库文件，访问
+
+https://fedora.pkgs.org/29/fedora-x86-64/libmpx-8.2.1-2.fc29.i686.rpm.html
+
+并安装rpm包，解决问题。
 
 ## 运行结果
 
