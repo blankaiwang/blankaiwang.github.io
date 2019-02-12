@@ -22,7 +22,7 @@ tags:
 
 ### RIPE Test Bed：
 
-git clone https://github.com/johnwilander/RIPE.git
+`git clone https://github.com/johnwilander/RIPE.git`
 
 ### 系统配置
 
@@ -43,9 +43,8 @@ LDFLAGS+=-lmpx -lmpxwrappers
 
 ## 问题修正
 
-1. 在64位OS中，由于RIPE在MAKEFILE中加入了 `-m32`选项强制进行32位编译，直接make会报错.
-
-   Fedora 29:
+在64位OS中，由于RIPE在MAKEFILE中加入了 `-m32`选项强制进行32位编译，直接make会报错.
+    Fedora 29:
 
 ```bash
 gnu/stubs-32.h:No such file or directory
@@ -61,7 +60,7 @@ fatal error: sys/cdefs.h: No such file or directory
 
 ​	添加支持 `sudo apt-get install glibc6-dev-i386`
 
-2. Fedora 29下，添加MPX编译选项后，make报错：
+Fedora 29下，添加MPX编译选项后，make报错：
 
    ![error2.1](https://github.com/blankaiwang/blankaiwang.github.io/raw/master/_posts/2019-02-12-Intel-MPX-Security-Test.assets/Figure%201.jpg)
 
