@@ -93,6 +93,11 @@ Table 2：
 
 |                   | 硬件结构                                                     |
 | ----------------- | ------------------------------------------------------------ |
+| Chuang et al. [2] | 1. 微指令插入；2. 32位元数据检查表；3. 基于元数据的寄存器映射(对所有的寄存器) |
+| HardBound [3]     | 1. 微指令插入；2. 为每次内存访问引入指针标签缓存             |
+| SafeProc [5]      | 1. 256位内容可寻址内存(在每次内存访问时进行关联检索)；2. 硬件哈希表；3. 256位FIFO缓冲区 |
+| Watchdog [7]      | 1. 微指令注入；为每次内存访问引入 _lock location_ 缓存；3. 寄存器重命名 |
+
 使用隐式检查的硬件结构通过微指令插入来对元数据进行检查和传递。已有的工作中, [2, 3, 7]属于这一类型。为了降低在每次内存访问时对元数据进行访问带来的额外性能开销，文献 [3]提出了指针标签，文献 [7]引入了 _lock_ 缓存机制。尽管通过引入对应的硬件结构，可以有效实施隐式检查，但是这类检查无法利用到寄存器对代码的优化功能。相反的，使用显式检查的防护方案，如SafeProc [5]修改了软件工具链对指令进行插入。尽管在他们的论文中，作者没有对编译器进行静态优化以消除冗余的检查，但是显式检查本身允许编译器在使用硬件加速的同时，对冗余检查进行清除。
 
 基于硬件的指针检查需要对指针进行识别，而指针信息通常在二进制文件中是缺失的。HardBound [3]在每次内存访问时都需要元数据进行检查，因此他们引入了指针标签缓存机制来降低通常情况下的性能开销。Watchdog [7]使用了启发式的方法过滤内存操作中所有非指针大小的操作，从而减少了对元数据的访问次数。SafeProc [5]以及Chuang et al. [2]的工作提供了新的指令扩展，从而使编译器能够准确识别指针操作。
@@ -110,9 +115,9 @@ SafeProc [5]使用指令扩展来识别指针并且检测时间错误。SafeProc
 
 2. W. Chuang, S. Narayanasamy, and B. Calder. Accelerating Meta Data Checks for Software Correctness and Security. Journal of Instruction-Level Parallelism, 9, June 2007.
 3. J. Devietti, C. Blundell, M. M. K. Martin, and S. Zdancewic. Hardbound: Architectural Support for Spatial Safety of the C Programming Language. In Proceedings of the 13th International Conference on Architectural Support for Programming Languages and Operating Systems, Mar. 2008.
-4. K. Ganesh. Pointer Checker: Easily Catch Out-of-Bounds Memory Accesses. Intel Corporation, 2012. http://software.intel.com/sites/products/parallelmag/singlearticles/issue11/7080_2_IN_ParallelMag_Issue11_Pointer_Checker.pdf.
+4. K. Ganesh. Pointer Checker: [Easily Catch Out-of-Bounds Memory Accesses](http://software.intel.com/sites/products/parallelmag/singlearticles/issue11/7080_2_IN_ParallelMag_Issue11_Pointer_Checker.pdf). Intel Corporation, 2012.
 5. S. Ghose, L. Gilgeous, P. Dudnik, A. Aggarwal, and C. Waxman. Architectural Support for Low Overhead Detection of Memory Viloations. In Proceedings of the Design, Automation and Test in Europe, Mar. 2009.
-6. Intel Corporation. Intel Architecture Instruction Set Extensions Programming Reference, 319433-015 edition, July 2013. http://download-software.intel.com/sites/default/files/319433-015.pdf
+6. Intel Corporation. [Intel Architecture Instruction Set Extensions Programming Reference](http://download-software.intel.com/sites/default/files/319433-015.pdf), 319433-015 edition, July 2013. 
 7. S. Nagarakatte, M. M. K. Martin, and S. Zdancewic. Watchdog: Hardware for Safe and Secure Manual Memory Management and Full Memory Safety. In Proceedings of the 39th Annual International Symposium on Computer Architecture, June 2012.
 8. S. Nagarakatte, J. Zhao, M. M. K. Martin, and S. Zdancewic. SoftBound: Highly Compatible and Complete Spatial Memory Safety for C. In Proceedings of the SIGPLAN 2009 Conference on Programming Language Design and Implementation, June 2009.
 9. S. Nagarakatte, J. Zhao, M. M. K. Martin, and S. Zdancewic. CETS: Compiler Enforced Temporal Safety for C. In Proceedings of the 2010 International Symposium on Memory Management, June 2010.
