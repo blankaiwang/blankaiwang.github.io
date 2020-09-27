@@ -1,22 +1,17 @@
 ```
 layout:     post
-title:      "Background on Pointer Checking"
+title:      "Windows 10 64bit Aria2 配置"
 subtitle:   ""
 author:     "blankaiwang"
-header-img: "img/bg-4.jpeg"
+header-img: "img/Aria2.jpg"
 header-mask:  0.5
 catalog: true
 tags:
 
-    - Security
-    - Translation
-    - Pointer Checking
+    - Windows 10
+    - Aria2
     
 ```
-
-
-
-
 
 
 
