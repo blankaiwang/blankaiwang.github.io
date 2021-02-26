@@ -1,16 +1,17 @@
 ```
 layout:     post
-title:      "Windows 10 64bit Aria2 配置"
+title:      "Windows 10 64bit Aria2配置"
 subtitle:   ""
 author:     "blankaiwang"
-header-img: "img/Aria2.jpg"
+
 header-mask:  0.5
 catalog: true
 tags:
 
-    - Windows 10
     - Aria2
-    
+
+
+
 ```
 
 
@@ -19,7 +20,7 @@ tags:
 
 ## 1. 下载并解压Aria2
 
-访问Aria2的[GitHub博客](https://aria2.github.io/)，跳转到对应的版本下载页。本文以version 1.35.0为例。
+访问Aria2的[GitHub](https://aria2.github.io/)，跳转到对应的版本下载页。本文以version 1.35.0为例。
 
 在下载页的assets处，选择下载系统适配的细分版本，此处选择下载 aria2-1.35.0-win-64bit-build1.zip。
 
