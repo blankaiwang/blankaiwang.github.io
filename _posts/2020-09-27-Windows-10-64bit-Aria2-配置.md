@@ -1,4 +1,4 @@
-```
+---
 layout:     post
 title:      "Windows 10 64bit Aria2配置"
 subtitle:   ""
@@ -12,7 +12,9 @@ tags:
 
 
 
-```
+---
+
+
 
 
 
@@ -98,6 +100,4 @@ CreateObject("WScript.Shell").Run "C:\aria2\aria2c.exe --conf-path=aria2.conf",0
 
 * https://www.cnblogs.com/banxiancode/p/12604034.html
 * https://www.cnblogs.com/mlgjb/p/9144575.html
-
-
 
